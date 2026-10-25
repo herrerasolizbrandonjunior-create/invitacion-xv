@@ -1,0 +1,4 @@
+Pon aquí tus imágenes con estos nombres (puedes cambiarlos en index.html):
+flor-arriba.png  flor-abajo.png  marco-encaje.png  foto1.jpg ... foto6.jpg
+globos.png  quince.png  sello.png  flor-deco.png  corazon-encaje.png
+(Después de poner las imágenes puedes borrar este archivo.)

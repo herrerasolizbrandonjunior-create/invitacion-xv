@@ -1,0 +1,78 @@
+/* =====================================================
+   TAILWIND CSS v4 · tema de la invitación
+   Casi todo el diseño está como clases de Tailwind en index.html.
+   Aquí solo van: la paleta, las fuentes y componentes repetidos.
+   ===================================================== */
+@import "tailwindcss";
+
+/* Fuentes instaladas con npm (sin depender de Google Fonts) */
+@import "@fontsource/great-vibes";
+@import "@fontsource/playfair-display/400.css";
+@import "@fontsource/playfair-display/600.css";
+@import "@fontsource/playfair-display/400-italic.css";
+@import "@fontsource/playfair-display/600-italic.css";
+
+/* ---------- PALETA y FUENTES (cámbialos aquí) ----------
+   Se usan como: bg-verde, text-crema, bg-verde-claro, font-script, etc. */
+@theme {
+  --color-verde: #003118;          /* fondo principal */
+  --color-verde-claro: #004822;    /* dedicatorias y hover */
+  --color-verde-oscuro: #022c22;   /* franja lateral en PC */
+  --color-verde-profundo: #052e16; /* libro de firmas y ventana emergente */
+  --color-crema: #e6e2d3;          /* portada, botones y papel */
+  --color-salvia: #b3c7a6;         /* corazón del dresscode (extra) */
+  --color-dorado: #b98a4b;         /* foco de teclado (extra) */
+
+  --font-script: "Great Vibes", cursive;
+  --font-serif: "Playfair Display", Georgia, serif;
+
+  --animate-pulso: pulso 2s infinite;
+  @keyframes pulso {
+    0%   { box-shadow: 0 0 0 0 rgb(0 49 24 / .5); }
+    70%  { box-shadow: 0 0 0 18px rgb(0 49 24 / 0); }
+    100% { box-shadow: 0 0 0 0 rgb(0 49 24 / 0); }
+  }
+}
+
+@layer base {
+  :focus-visible { outline: 3px solid var(--color-dorado); outline-offset: 3px; }
+}
+
+/* ---------- Componentes repetidos ---------- */
+@utility titulo   { @apply font-script text-[clamp(2.6rem,11vw,3.4rem)] leading-tight; }
+@utility mensaje  { @apply font-script mx-auto max-w-[34ch] text-[clamp(1.25rem,5vw,1.55rem)] leading-snug; }
+@utility campo    { @apply w-full rounded-none border-0 border-b border-white/35 bg-transparent px-0.5 py-2.5 text-white placeholder:text-white/70; }
+@utility btn      { @apply mt-4 inline-block cursor-pointer rounded-full px-9 py-3.5 font-semibold tracking-wide no-underline transition duration-200 disabled:cursor-not-allowed disabled:opacity-50; }
+@utility btn-crema { @apply btn bg-crema text-verde enabled:hover:-translate-y-0.5 enabled:hover:brightness-105; }
+@utility btn-borde { @apply btn border-[3px] border-verde text-verde hover:bg-verde-claro hover:text-crema; }
+@utility btn-claro { @apply btn border border-crema text-crema; }
+
+@layer components {
+  /* Cada página ocupa toda la pantalla y SOLO UNA se ve a la vez.
+     pages.js le pone data-activa a la página actual. Si el contenido es más alto
+     que la pantalla (celulares pequeños), la página se desplaza por dentro. */
+  .pagina {
+    @apply invisible absolute inset-0 flex flex-col items-center overflow-y-auto px-6 pt-12 pb-24 text-center opacity-0 outline-none transition-[opacity,visibility] duration-700;
+    transition-delay: 0s, .7s; /* se oculta después del fundido */
+  }
+  .pagina::before, .pagina::after { content: ''; flex: 1 1 0; } /* centra el contenido sin cortar el scroll */
+  .pagina[data-activa] { @apply visible opacity-100; transition-delay: 0s, 0s; }
+
+  /* Entrada suave del contenido cada vez que llegas a la página */
+  .pagina > * { @apply shrink-0 translate-y-4 opacity-0 transition-all duration-1000 ease-out motion-reduce:transition-none; }
+  .pagina[data-activa] > * { @apply translate-y-0 opacity-100; }
+  .pagina[data-activa] > :nth-child(2) { transition-delay: .15s; }
+  .pagina[data-activa] > :nth-child(3) { transition-delay: .3s; }
+
+  /* Espacio para imágenes: si el archivo no existe se muestra "AQUÍ VA IMAGEN" */
+  .slot { @apply relative; }
+  .slot > img { @apply block size-full object-cover; }
+  .slot[data-missing] {
+    @apply grid min-h-20 place-items-center overflow-hidden border-2 border-dashed border-current/60 bg-current/10;
+  }
+  .slot[data-missing] > img { @apply hidden; }
+  .slot[data-missing]::after {
+    content: attr(data-label);
+    @apply p-1.5 text-center font-sans text-[11px] font-semibold leading-tight opacity-80;
+  }
+}

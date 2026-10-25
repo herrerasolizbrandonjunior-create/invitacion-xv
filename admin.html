@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel privado · XV Najavi</title>
+  <!-- No está enlazada desde la invitación, pide login y no se indexa -->
+  <meta name="robots" content="noindex, nofollow">
+  <script type="module" src="/src/admin.js"></script>
+</head>
+<body class="min-h-svh bg-crema font-serif text-verde-profundo">
+
+  <!-- INICIO DE SESIÓN -->
+  <form id="login" class="mx-auto mt-16 grid max-w-sm gap-3 rounded-xl bg-white p-6 shadow">
+    <h1 class="text-xl font-semibold">Panel privado</h1>
+    <input id="email" type="email" placeholder="Correo" required autocomplete="username" class="rounded-md border border-gray-400 p-2.5">
+    <input id="clave" type="password" placeholder="Contraseña" required autocomplete="current-password" class="rounded-md border border-gray-400 p-2.5">
+    <button class="cursor-pointer rounded-md bg-verde p-2.5 text-white">Entrar</button>
+    <p id="error" class="text-red-700"></p>
+  </form>
+
+  <!-- PANEL -->
+  <div id="panel" hidden>
+    <header class="flex items-center justify-between gap-4 bg-verde p-4 text-white">
+      <h1 class="text-lg font-semibold">XV Najavi · Confirmaciones</h1>
+      <div class="flex gap-2">
+        <button id="btnCsv" class="cursor-pointer rounded-md border border-white/60 px-3 py-1.5">Descargar CSV</button>
+        <button id="btnSalir" class="cursor-pointer rounded-md border border-white/60 px-3 py-1.5">Salir</button>
+      </div>
+    </header>
+    <main class="mx-auto max-w-4xl space-y-4 p-4">
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div class="rounded-xl bg-verde p-3 text-center text-white"><b id="tSi" class="block text-3xl">0</b>Respuestas "sí"</div>
+        <div class="rounded-xl bg-verde p-3 text-center text-white"><b id="tPers" class="block text-3xl">0</b>Personas</div>
+        <div class="rounded-xl bg-verde p-3 text-center text-white"><b id="tNo" class="block text-3xl">0</b>No asisten</div>
+        <div class="rounded-xl bg-verde p-3 text-center text-white"><b id="tFirmas" class="block text-3xl">0</b>Mensajes</div>
+      </div>
+
+      <section class="overflow-x-auto rounded-xl bg-white p-4 shadow">
+        <h2 class="mb-2 text-lg font-semibold">Confirmaciones</h2>
+        <table class="w-full text-left text-sm [&_td]:border-b [&_td]:border-gray-200 [&_td]:p-2 [&_th]:p-2">
+          <thead><tr><th>Nombre</th><th>Asiste</th><th>Personas</th><th>Celular</th><th>Fecha</th></tr></thead>
+          <tbody id="tbConf"></tbody>
+        </table>
+      </section>
+
+      <section class="overflow-x-auto rounded-xl bg-white p-4 shadow">
+        <h2 class="mb-2 text-lg font-semibold">Libro de firmas</h2>
+        <table class="w-full text-left text-sm [&_td]:border-b [&_td]:border-gray-200 [&_td]:p-2 [&_th]:p-2">
+          <thead><tr><th>De parte de</th><th>Mensaje</th><th>Fecha</th></tr></thead>
+          <tbody id="tbFirmas"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

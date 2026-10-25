@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mis XV · Najavi M. Herrera Soliz</title>
+  <meta name="description" content="Estás invitado a los XV años de Najavi · 4 de diciembre de 2026">
+  <meta name="theme-color" content="#003118">
+  <meta name="robots" content="noindex">
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body class="min-h-dvh bg-verde-oscuro bg-[radial-gradient(ellipse_at_top,#004822,#022c22_65%)] font-serif text-white antialiased md:grid md:place-items-center">
+
+  <!-- ============ MÚSICA ============ Pon tu canción en public/audio/musica.mp3 -->
+  <audio id="musica" loop preload="auto"><source src="/audio/musica.mp3" type="audio/mpeg"></audio>
+  <button id="btnSonido" hidden aria-label="Silenciar o activar música"
+    class="fixed right-3 top-3 z-40 size-10 cursor-pointer rounded-full border border-crema bg-verde/85 text-xl text-crema data-[mute]:line-through data-[mute]:opacity-50">♪</button>
+
+  <main id="invitacion" class="relative mx-auto h-dvh w-full max-w-[480px] overflow-hidden bg-verde md:my-6 md:h-[min(860px,calc(100dvh-3rem))] md:rounded-[2rem] md:border md:border-white/15 md:shadow-[0_30px_80px_rgb(0_0_0/.55)]">
+
+  <!-- ============ DECORACIÓN · POLVO DORADO ============ -->
+  <canvas id="polvoDorado" aria-hidden="true" class="pointer-events-none absolute inset-0 z-20 size-full"></canvas>
+
+  
+    <!-- ============ PÁGINA 1 · PORTADA ============ -->
+    <section id="portada" data-titulo="Portada" class="pagina !overflow-hidden bg-crema text-verde">
+      <!-- AQUÍ VA IMAGEN: flor esquina superior derecha -->
+      <div class="slot pointer-events-none absolute -top-[4%] -right-[6%] aspect-square w-[min(36vw,180px)]" data-label="AQUÍ VA IMAGEN: flor-arriba.png"><img src="/img/flor-arriba.png" alt=""></div>
+      <!-- AQUÍ VA IMAGEN: flor esquina inferior izquierda -->
+      <div class="slot pointer-events-none absolute -bottom-[12%] -left-[1%] aspect-square w-[min(36vw,180px)]" data-label="AQUÍ VA IMAGEN: flor-abajo.png"><img src="/img/flor-abajo.png" alt=""></div>
+
+      <div class="relative z-10 p-4">
+        <p class="font-script text-[clamp(2rem,8vw,3.2rem)] italic">Mis</p>
+        <h1 class="text-[clamp(4rem,20vw,8rem)] leading-[.95] font-semibold">XV</h1>
+        <p class="font-script mt-2 mb-3 text-[clamp(1.8rem,7vw,2.8rem)] leading-tight">Najavi M.<br>Herrera Soliz</p>
+        <p class="mb-3 tracking-[.25em]">4 · Dic · 26</p>
+        <p class="font-script text-xl">Mis padres:</p>
+        <p class="font-script mb-4 text-[clamp(1.1rem,4.6vw,1.45rem)] leading-tight">Karina K. Soliz Mancilla<br>Willans Herrera Aguila</p>
+        <button id="btnAbrir" aria-label="Comenzar: reproducir música y ver la invitación"
+          class="inline-grid size-14 animate-pulso cursor-pointer place-items-center rounded-full bg-verde text-crema motion-reduce:animate-none">
+          <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+        </button>
+        <p class="mt-3 text-sm italic opacity-80">Toca para abrir la invitación</p>
+      </div>
+    </section>
+
+    <!-- ============ PÁGINA 2 · IMÁGENES ============ -->
+    <section id="pagina-fotos" data-titulo="Fotos" class="pagina !overflow-hidden bg-verde">
+       <div class="relative aspect-[1/1.12] w-[min(100%,580px,calc(120dvh_/_1.12))]">
+      <!-- AQUÍ VA IMAGEN: marco de encaje (queda detrás de las fotos) -->
+      <div class="slot pointer-events-none absolute inset-0 z-0 data-[missing]:after:hidden" data-label="AQUÍ VA IMAGEN: marco-encaje.png"><img src="/img/marco-encaje.png" alt="" class="w-full h-full object-contain"></div>
+      <div class="absolute inset-y-[15%] inset-x-[28%] z-10 grid grid-cols-2 grid-rows-3 gap-1.5">
+      <!-- AQUÍ VA IMAGEN: foto 1 --><div class="slot overflow-hidden bg-crema text-verde" data-label="AQUÍ VA IMAGEN: foto1.jpg"><img src="/img/foto1.jpg" alt="Najavi de pequeña"></div>
+      <!-- AQUÍ VA IMAGEN: foto 2 --><div class="slot overflow-hidden bg-crema text-verde" data-label="AQUÍ VA IMAGEN: foto2.jpg"><img src="/img/foto2.jpg" alt="Najavi con su familia"></div>
+      <!-- AQUÍ VA IMAGEN: foto 3 --><div class="slot overflow-hidden bg-crema text-verde" data-label="AQUÍ VA IMAGEN: foto3.jpg"><img src="/img/foto3.jpg" alt="Najavi"></div>
+      <!-- AQUÍ VA IMAGEN: foto 4 --><div class="slot overflow-hidden bg-crema text-verde" data-label="AQUÍ VA IMAGEN: foto4.jpg"><img src="/img/foto4.jpg" alt="Najavi"></div>
+      <!-- AQUÍ VA IMAGEN: foto 5 --><div class="slot overflow-hidden bg-crema text-verde" data-label="AQUÍ VA IMAGEN: foto5.jpg"><img src="/img/foto5.jpg" alt="Najavi"></div>
+      <!-- AQUÍ VA IMAGEN: foto 6 --><div class="slot overflow-hidden bg-crema text-verde" data-label="AQUÍ VA IMAGEN: foto6.jpg"><img src="/img/foto6.jpg" alt="Najavi"></div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ============ PÁGINA 3 · DE PARTE DE MAMÁ ============ -->
+    <section id="pagina-mama" data-titulo="De parte de mamá" class="pagina bg-verde-claro">
+      <p class="titulo">De parte de mamá</p>
+      <p class="mensaje mt-6">Hace 15 años llegó una princesa a nuestra familia para enseñarnos que se puede amar sin condiciones. Y recordar ese día es un momento único y especial.</p>
+    </section>
+
+    <!-- ============ PÁGINA 4 · CUENTA REGRESIVA ============ -->
+    <section id="pagina-cuenta" data-titulo="Cuenta regresiva" class="pagina bg-verde">
+      <h2 class="font-script text-[clamp(3.4rem,15vw,4.6rem)] leading-tight">Faltan</h2>
+      <div id="reloj" aria-live="polite" class="flex justify-center gap-[clamp(.8rem,5vw,1.8rem)]">
+        <div class="flex min-w-14 flex-col"><b data-unidad="dias" class="text-[clamp(2.4rem,11vw,3.2rem)] font-semibold italic">--</b><span class="text-[.95rem] italic opacity-75">días</span></div>
+        <div class="flex min-w-14 flex-col"><b data-unidad="horas" class="text-[clamp(2.4rem,11vw,3.2rem)] font-semibold italic">--</b><span class="text-[.95rem] italic opacity-75">hrs</span></div>
+        <div class="flex min-w-14 flex-col"><b data-unidad="min" class="text-[clamp(2.4rem,11vw,3.2rem)] font-semibold italic">--</b><span class="text-[.95rem] italic opacity-75">min</span></div>
+        <div class="flex min-w-14 flex-col"><b data-unidad="seg" class="text-[clamp(2.4rem,11vw,3.2rem)] font-semibold italic">--</b><span class="text-[.95rem] italic opacity-75">seg</span></div>
+      </div>
+      <p class="mt-6 italic opacity-85">para el 4 de diciembre de 2026</p>
+    </section>
+
+    <!-- ============ PÁGINA 5 · DE PARTE DE PAPÁ ============ -->
+    <section id="pagina-papa" data-titulo="De parte de papá" class="pagina bg-verde-claro">
+      <p class="titulo">De parte de papá</p>
+      <p class="mensaje mt-6">Hay momentos inolvidables y únicos en nuestras vidas. Y nos gustaría compartir con ustedes este día especial de nuestra princesa, sus 15 años, un día que nunca se borrará de nuestros recuerdos.</p>
+    </section>
+
+    <!-- ============ PÁGINA 6 · CONFIRMAR ASISTENCIA ============ -->
+    <section id="pagina-confirmar" data-titulo="Confirmar asistencia" class="pagina bg-verde">
+      <h2 class="titulo">Confirmar asistencia</h2>
+      <p class="mb-2 text-[1.1rem] leading-normal">Agradecemos confirmes asistencia<br>antes del 4 de noviembre.</p>
+      <button id="btnConfirmar" class="btn-crema">Confirmar asistencia</button>
+    </section>
+
+    <!-- ============ PÁGINA 7 · LIBRO DE FIRMAS ============ -->
+    <section id="pagina-firmas" data-titulo="Libro de firmas" class="pagina bg-verde-profundo">
+      <h2 class="titulo mb-4">Libro de firmas</h2>
+      <form data-form="firma" autocomplete="off" novalidate class="w-full max-w-sm text-left">
+        <label for="fNombre" class="mb-1 block opacity-80">De parte de:</label>
+        <input id="fNombre" name="nombre" type="text" maxlength="100" required data-contador="cNombre" class="campo">
+        <small id="cNombre" class="my-1 block text-right opacity-60">0/100</small>
+
+        <label for="fMensaje" class="sr-only">Mensaje</label>
+        <textarea id="fMensaje" name="mensaje" maxlength="500" rows="4" required data-contador="cMensaje" placeholder="Un deseo, una anécdota, un recuerdo…" class="campo mt-4 resize-none"></textarea>
+        <small id="cMensaje" class="my-1 block text-right opacity-60">0/500</small>
+
+        <!-- Campo trampa anti-spam: los humanos no lo ven -->
+        <input type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true" class="absolute -left-[9999px] opacity-0">
+        <button type="submit" class="btn-crema mx-auto block">Firmar libro</button>
+      </form>
+    </section>
+
+    <!-- ============ PÁGINA 8 · UBICACIÓN Y DRESSCODE ============ -->
+    <section id="pagina-ubicacion" data-titulo="Ubicación" class="pagina !overflow-hidden bg-verde pb-20">
+      <div class="relative w-[min(84%,400px)] rounded-[6px_14px_8px_12px] bg-crema pt-5 pb-6 pr-3 pl-[42%] text-verde shadow-[0_6px_18px_rgb(0_0_0/.35)]">
+        <!-- AQUÍ VA IMAGEN: globos plateados -->
+        <div class="slot absolute top-2 left-2 w-[40%]" data-label="AQUÍ VA IMAGEN: globos.png"><img src="/img/globos.png" alt="" class="w-full h-auto"></div>
+        <div>
+          <h2 class="font-script text-[clamp(2.2rem,10vw,3rem)] leading-tight">Recepción</h2>
+          <p class="my-1 text-[clamp(1.2rem,5vw,1.5rem)]">18:30pm</p>
+          <p class="text-[clamp(.9rem,3.8vw,1.1rem)]">Lugar:<br><strong>Salon Aldo Eventos</strong></p>
+          <!-- El enlace se configura en src/config.js (ubicacionUrl) -->
+          <a id="btnUbicacion" class="btn-borde px-4 py-2 text-[.9rem] whitespace-nowrap" href="#" target="_blank" rel="noopener">Ver ubicación</a>
+        </div>
+      </div>
+
+      <div class="relative -mt-6 flex w-full items-center">
+        <!-- AQUÍ VA IMAGEN: flor decorativa -->
+        <div class="slot -ml-[10%] aspect-square w-[44%]" data-label="AQUÍ VA IMAGEN: flor-deco.png"><img src="/img/flor-deco.png" alt=""></div>
+        <div class="relative -ml-[10%] grid aspect-[1/.95] w-[66%] place-items-center text-verde">
+          <!-- AQUÍ VA IMAGEN: corazón de encaje verde salvia -->
+          <div class="slot absolute inset-0 data-[missing]:rounded-[40%] data-[missing]:border-verde data-[missing]:bg-salvia data-[missing]:after:hidden" data-label="AQUÍ VA IMAGEN: corazon-encaje.png"><img src="/img/corazon-encaje.png" alt=""></div>
+          <p class="relative max-w-[50%] text-[clamp(.65rem,2.8vw,.85rem)] leading-snug"><strong>Dresscode:</strong><br>Vengan de manera formal dejando el color verde para la quinceañera</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BARRA DE NAVEGACIÓN (cápsula de cristal) ============ -->
+    <div id="barra" data-oculta class="absolute inset-x-0 bottom-0 z-30 flex justify-center px-4 pb-[max(1rem,env(safe-area-inset-bottom))] transition-all duration-500 data-[oculta]:pointer-events-none data-[oculta]:translate-y-4 data-[oculta]:opacity-0">
+      <div class="flex w-full max-w-[360px] items-center justify-between gap-2 rounded-full border border-white/20 bg-black/30 p-1.5 shadow-[0_8px_30px_rgb(0_0_0/.35)] backdrop-blur-md">
+
+        <!-- Botón Anterior (redondo, solo flecha) -->
+        <button id="btnAnterior" type="button" aria-label="Página anterior"
+          class="grid size-11 shrink-0 cursor-pointer place-items-center rounded-full border border-white/25 bg-white/10 text-crema transition hover:bg-white/20 active:scale-90 data-[oculto]:invisible">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+
+        <!-- Puntos de progreso (pages.js los crea; se ocultan en pantallas muy angostas) -->
+        <nav id="puntos" aria-label="Páginas de la invitación" class="hidden items-center gap-1.5 min-[380px]:flex"></nav>
+
+        <!-- Botón Siguiente (cápsula crema con flecha) -->
+        <button id="btnSiguiente" type="button"
+          class="group inline-flex h-11 shrink-0 cursor-pointer items-center gap-2 rounded-full bg-crema pr-1.5 pl-5 font-semibold tracking-wide text-verde shadow-md transition hover:brightness-105 active:scale-95 data-[oculto]:invisible">
+          <span data-etiqueta>Siguiente</span>
+          <span class="grid size-8 place-items-center rounded-full bg-verde text-crema transition-transform duration-300 group-hover:translate-x-0.5">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ VENTANA DE CONFIRMACIÓN ============ -->
+  <dialog id="dlgConfirmar" class="m-auto w-[min(92vw,420px)] rounded-xl border border-crema bg-verde-profundo p-6 text-white backdrop:bg-black/70">
+    <form data-form="rsvp" method="dialog" autocomplete="off" novalidate>
+      <h3 class="font-script mb-4 text-center text-[2.4rem]">Confirmar asistencia</h3>
+
+      <label for="cNombreInv" class="mt-3 mb-1 block">Tu nombre completo</label>
+      <input id="cNombreInv" name="nombre" type="text" maxlength="100" required class="campo">
+
+      <fieldset class="mt-4">
+        <legend>¿Podrás asistir?</legend>
+        <label class="flex items-center gap-2"><input type="radio" name="asistira" value="si" checked> Sí, ahí estaré</label>
+        <label class="flex items-center gap-2"><input type="radio" name="asistira" value="no"> No podré asistir</label>
+      </fieldset>
+
+      <div id="bloquePersonas">
+        <label for="cPersonas" class="mt-3 mb-1 block">¿Cuántas personas asisten (contándote)?</label>
+        <select id="cPersonas" name="personas" class="campo [&>option]:text-black">
+          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+        </select>
+      </div>
+
+      <label for="cTel" class="mt-3 mb-1 block">Celular / WhatsApp (opcional)</label>
+      <input id="cTel" name="telefono" type="tel" maxlength="20" class="campo">
+
+      <input type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true" class="absolute -left-[9999px] opacity-0">
+
+      <div class="mt-4 flex justify-center gap-3">
+        <button type="button" id="btnCerrarDlg" class="btn-claro mt-0 px-6 py-3">Cancelar</button>
+        <button type="submit" class="btn-crema mt-0 px-6 py-3">Enviar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Aviso flotante -->
+  <div id="toast" role="status" aria-live="polite"
+    class="fixed bottom-6 left-1/2 z-[100] max-w-[90vw] translate-y-[200%] -translate-x-1/2 rounded-lg bg-crema px-5 py-3.5 text-center text-verde shadow-xl transition duration-500 data-[visible]:translate-y-0"></div>
+</body>
+</html>
