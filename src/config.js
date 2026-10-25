@@ -4,7 +4,7 @@
 
 export const EVENT = Object.freeze({
   // Fecha y hora del evento (Bolivia = -04:00). Formato: AAAA-MM-DDTHH:MM:SS-04:00
-  fecha: '2026-12-04T18:30:00-04:00',
+  fecha: '2026-12-04T19:00:00-04:00',
 
   // Último momento para confirmar asistencia (después se desactiva el botón)
   fechaLimite: '2026-11-04T23:59:59-04:00',
