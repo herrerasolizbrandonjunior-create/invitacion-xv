@@ -21,9 +21,8 @@
   <!-- ============ DECORACIÓN · POLVO DORADO ============ -->
   <canvas id="polvoDorado" aria-hidden="true" class="pointer-events-none absolute inset-0 z-20 size-full"></canvas>
 
-  
     <!-- ============ PÁGINA 1 · PORTADA ============ -->
-    <section id="portada" data-titulo="Portada" class="pagina !overflow-hidden bg-crema text-verde">
+    <section id="portada" data-titulo="Portada" class="pagina !overflow-hidden !pt-6 !pb-6 bg-crema text-verde">
       <!-- AQUÍ VA IMAGEN: flor esquina superior derecha -->
       <div class="slot pointer-events-none absolute -top-[4%] -right-[6%] aspect-square w-[min(36vw,180px)]" data-label="AQUÍ VA IMAGEN: flor-arriba.png"><img src="/img/flor-arriba.png" alt=""></div>
       <!-- AQUÍ VA IMAGEN: flor esquina inferior izquierda -->
@@ -84,11 +83,29 @@
       <p class="mensaje mt-6">Hay momentos inolvidables y únicos en nuestras vidas. Y nos gustaría compartir con ustedes este día especial de nuestra princesa, sus 15 años, un día que nunca se borrará de nuestros recuerdos.</p>
     </section>
 
-    <!-- ============ PÁGINA 6 · CONFIRMAR ASISTENCIA ============ -->
-    <section id="pagina-confirmar" data-titulo="Confirmar asistencia" class="pagina bg-verde">
-      <h2 class="titulo">Confirmar asistencia</h2>
-      <p class="mb-2 text-[1.1rem] leading-normal">Agradecemos confirmes asistencia<br>antes del 4 de noviembre.</p>
-      <button id="btnConfirmar" class="btn-crema">Confirmar asistencia</button>
+    <!-- ============ PÁGINA 6 · UBICACIÓN Y DRESSCODE ============ -->
+    <section id="pagina-ubicacion" data-titulo="Ubicación" class="pagina !overflow-hidden bg-verde pb-20">
+      <div class="relative w-[min(92%,440px)] rounded-[6px_14px_8px_12px] bg-crema pt-5 pb-10 pr-3 pl-[48%] text-verde shadow-[0_6px_18px_rgb(0_0_0/.35)]">
+        <!-- AQUÍ VA IMAGEN: globos plateados -->
+        <div class="slot absolute top-2 left-1 w-[46%]" data-label="AQUÍ VA IMAGEN: globos.png"><img src="/img/globos.png" alt="" class="w-full h-auto"></div>
+        <div>
+          <h2 class="font-script text-[clamp(2.2rem,10vw,3rem)] leading-tight">Recepción</h2>
+          <p class="my-1 text-[clamp(1.2rem,5vw,1.5rem)]">19:00</p>
+          <p class="text-[clamp(.9rem,3.8vw,1.1rem)]">Lugar:<br><strong>Salon Aldo Eventos</strong></p>
+          <!-- El enlace se configura en src/config.js (ubicacionUrl) -->
+          <a id="btnUbicacion" class="btn-borde px-4 py-2 text-[.9rem] whitespace-nowrap" href="#" target="_blank" rel="noopener">Ver ubicación</a>
+        </div>
+      </div>
+
+      <div class="relative -mt-6 flex w-full items-center">
+        <!-- AQUÍ VA IMAGEN: flor decorativa -->
+        <div class="slot -top-12 -ml-[10%] aspect-square w-[44%]" data-label="AQUÍ VA IMAGEN: flor-deco.png"><img src="/img/flor-deco.png" alt=""></div>
+        <div class="relative -top-4 -ml-[3%] grid aspect-[1/.95] w-[66%] place-items-center text-verde">
+          <!-- AQUÍ VA IMAGEN: corazón de encaje verde salvia -->
+          <div class="slot absolute inset-0 data-[missing]:rounded-[40%] data-[missing]:border-verde data-[missing]:bg-salvia data-[missing]:after:hidden" data-label="AQUÍ VA IMAGEN: corazon-encaje.png"><img src="/img/corazon-encaje.png" alt=""></div>
+          <p class="relative max-w-[50%] text-[clamp(.65rem,2.8vw,.85rem)] leading-snug"><strong>Dresscode:</strong><br>Vengan de manera formal dejando el color verde para la quinceañera</p>
+        </div>
+      </div>
     </section>
 
     <!-- ============ PÁGINA 7 · LIBRO DE FIRMAS ============ -->
@@ -109,29 +126,11 @@
       </form>
     </section>
 
-    <!-- ============ PÁGINA 8 · UBICACIÓN Y DRESSCODE ============ -->
-    <section id="pagina-ubicacion" data-titulo="Ubicación" class="pagina !overflow-hidden bg-verde pb-20">
-      <div class="relative w-[min(84%,400px)] rounded-[6px_14px_8px_12px] bg-crema pt-5 pb-6 pr-3 pl-[42%] text-verde shadow-[0_6px_18px_rgb(0_0_0/.35)]">
-        <!-- AQUÍ VA IMAGEN: globos plateados -->
-        <div class="slot absolute top-2 left-2 w-[40%]" data-label="AQUÍ VA IMAGEN: globos.png"><img src="/img/globos.png" alt="" class="w-full h-auto"></div>
-        <div>
-          <h2 class="font-script text-[clamp(2.2rem,10vw,3rem)] leading-tight">Recepción</h2>
-          <p class="my-1 text-[clamp(1.2rem,5vw,1.5rem)]">19:00pm</p>
-          <p class="text-[clamp(.9rem,3.8vw,1.1rem)]">Lugar:<br><strong>Salon Aldo Eventos</strong></p>
-          <!-- El enlace se configura en src/config.js (ubicacionUrl) -->
-          <a id="btnUbicacion" class="btn-borde px-4 py-2 text-[.9rem] whitespace-nowrap" href="#" target="_blank" rel="noopener">Ver ubicación</a>
-        </div>
-      </div>
-
-      <div class="relative -mt-6 flex w-full items-center">
-        <!-- AQUÍ VA IMAGEN: flor decorativa -->
-        <div class="slot -top-10 -ml-[10%] aspect-square w-[44%]" data-label="AQUÍ VA IMAGEN: flor-deco.png"><img src="/img/flor-deco.png" alt=""></div>
-        <div class="relative -top-4 -ml-[10%] grid aspect-[1/.95] w-[66%] place-items-center text-verde">
-          <!-- AQUÍ VA IMAGEN: corazón de encaje verde salvia -->
-          <div class="slot absolute inset-0 data-[missing]:rounded-[40%] data-[missing]:border-verde data-[missing]:bg-salvia data-[missing]:after:hidden" data-label="AQUÍ VA IMAGEN: corazon-encaje.png"><img src="/img/corazon-encaje.png" alt=""></div>
-          <p class="relative max-w-[50%] text-[clamp(.65rem,2.8vw,.85rem)] leading-snug"><strong>Dresscode:</strong><br>Vengan de manera formal dejando el color verde para la quinceañera</p>
-        </div>
-      </div>
+    <!-- ============ PÁGINA 8 · CONFIRMAR ASISTENCIA ============ -->
+    <section id="pagina-confirmar" data-titulo="Confirmar asistencia" class="pagina bg-verde">
+      <h2 class="titulo">Confirmar asistencia</h2>
+      <p class="mb-2 text-[1.1rem] leading-normal">Agradecemos confirmes asistencia<br>antes del 4 de noviembre.</p>
+      <button id="btnConfirmar" class="btn-crema">Confirmar asistencia</button>
     </section>
 
     <!-- ============ BARRA DE NAVEGACIÓN (cápsula de cristal) ============ -->
