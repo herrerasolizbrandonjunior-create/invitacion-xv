@@ -5,6 +5,7 @@
 import { EVENT } from '../config.js';
 import { $, $$, aviso } from '../lib/dom.js';
 import { guardarDocumento } from '../lib/firebase.js';
+import { avisarPorCorreo } from '../lib/email.js';
 
 const texto = (v) => String(v ?? '').trim();
 
@@ -29,6 +30,7 @@ const FORMULARIOS = {
         asistira,
         personas: asistira === 'si' ? Number(f.personas.value) : 0,
         telefono: texto(f.telefono.value),
+        avisarCorreo: true, // al confirmar, te llega un correo
       };
     },
     validar: (d) => (!d.nombre && 'Escribe tu nombre.') || (d.nombre.length > 100 && 'El nombre es muy largo.') || null,
@@ -57,6 +59,7 @@ function activarFormulario(form, alTerminar) {
     boton.disabled = true;
     try {
       await guardarDocumento(def.coleccion, datos);
+      if (def.avisarCorreo) avisarPorCorreo(datos); // sin esperar: no retrasa al invitado
       form.reset();
       activarContadoresReset(form);
       alTerminar?.();
@@ -107,3 +110,4 @@ export function iniciarFormularios() {
 
   activarFormulario(form, () => dialogo.close());
 }
+

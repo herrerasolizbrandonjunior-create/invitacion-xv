@@ -27,3 +27,11 @@ export const FIREBASE = Object.freeze({
 // Initialize Firebase
 
 export const firebaseConfigurado = Boolean(FIREBASE.apiKey && FIREBASE.projectId);
+
+export const EMAILJS = Object.freeze({
+  serviceId: 'service_9ss95eq',
+  templateId: 'template_5wopcdt',
+  publicKey: 'EtW474IkBBbIUU8yO',
+});
+
+export const emailConfigurado = Boolean(EMAILJS.serviceId && EMAILJS.templateId && EMAILJS.publicKey);
