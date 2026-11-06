@@ -7,7 +7,7 @@ export const EVENT = Object.freeze({
   fecha: '2026-12-04T19:00:00-04:00',
 
   // Último momento para confirmar asistencia (después se desactiva el botón)
-  fechaLimite: '2026-11-04T23:59:59-04:00',
+  fechaLimite: '2026-11-15T23:59:59-04:00',
 
   // Enlace del botón "Ver ubicación".
   // Google Maps: busca el salón > Compartir > Copiar enlace > pégalo aquí.
@@ -27,11 +27,3 @@ export const FIREBASE = Object.freeze({
 // Initialize Firebase
 
 export const firebaseConfigurado = Boolean(FIREBASE.apiKey && FIREBASE.projectId);
-
-export const EMAILJS = Object.freeze({
-  serviceId: 'service_9ss95eq',
-  templateId: 'template_5wopcdt',
-  publicKey: 'EtW474IkBBbIUU8yO',
-});
-
-export const emailConfigurado = Boolean(EMAILJS.serviceId && EMAILJS.templateId && EMAILJS.publicKey);
